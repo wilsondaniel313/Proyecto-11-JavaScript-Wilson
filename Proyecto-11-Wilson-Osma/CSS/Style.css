@@ -1,0 +1,76 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Aplica un fondo claro al cuerpo cuando tiene la clase "toggleBlanco".*/
+body.toggleBlanco{
+    background-color: rgba(255, 255, 255, 0.767);
+}
+
+/* Define el fondo oscuro predeterminado del cuerpo y sus estilos, con transiciones y ajustes para el tema claro */
+body{
+    background-color: rgb(35, 34, 34);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    transition: 0.5s;
+    
+    /* Aplica estilos adicionales cuando el cuerpo tiene la clase "toggleBlanco".*/
+    &.toggleBlanco{
+        background-color: rgba(255, 255, 255, 0.836);
+    }
+}
+
+/* Estilos específicos para el interruptor con el id "toggle", con ajustes para el tema claro.*/
+#toggle{ 
+    height: 160px;
+    width: 320px;
+    background: #1b1b1b;
+    box-shadow: inset 0 8px 60px   rgba(0, 0, 0,0.1), /* sombras interiores */
+                inset 0 8px 8px rgba(0, 0,0, 0.1),
+                inset 0 -4px 4px rgba(0, 0,0, 0.1);
+    position: relative;
+    border: none;
+    cursor: pointer;
+    transition: 0.5s;
+    appearance: none;
+    border-radius: 160px;
+
+    /*Aplica estilos adicionales cuando el interruptor tiene la clase "toggleBlanco".*/
+    &.toggleBlanco{
+        background-color: rgba(255, 255, 255, 0.801);
+        box-shadow: inset 0 8px 60px rgba(0, 0,0, 0,1),
+                    inset 0 8px 8px rgba(0, 0,0, 0,1),
+                    inset 0 -4px 4px rgba(0, 0,0, 0,1);
+        
+        /* Estilos específicos para el círculo dentro del interruptor.*/
+        .circulo{
+            left: 160px;
+            box-shadow: 0 8px 20px rgba(0, 0,0, 0,1),
+                        inset 4px 4px rgba(255,255,255,1),
+                        inset -4px 4px rgba(255,255,255,1);
+            background-color: linear-gradient(to bottom ,aliceblue,#fafafa);
+        }
+    }
+}
+
+/* Estilos para el círculo dentro del interruptor.*/
+.circulo{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 160px;
+    height: 160px;
+    content: "";
+    background: linear-gradient(to bottom, #444,#222);
+    border-radius: 50vh;
+    transform: scale(0.9);
+    transition: 0.5s;
+    box-shadow: 0 8px 40px rgba(0,0,0,0,0.5),
+                inset 4px 4px rgba(255,255 ,255 ,0.2),
+                inset -4px 4px rgba(255,255 ,255 ,0.2);
+}
